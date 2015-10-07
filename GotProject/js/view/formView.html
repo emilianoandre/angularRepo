@@ -1,0 +1,16 @@
+<h5>{{action}}</h5>
+<div>
+  <dl>
+    <dt>Name:</dt>
+    <dd></dd>
+    <input type="text" name="name" ng-model="prediction.name" ng-readonly={{readonly}}>
+    <dt>Family:</dt>
+    <input type="text" name="family" ng-model="prediction.family" ng-readonly={{readonly}}>
+    <dt>Season:</dt>
+    <input type="number" name="season" ng-model="prediction.season" ng-readonly={{readonly}}>
+    <dt>Episode:</dt>
+    <input type="number" name="episode" ng-model="prediction.episode" ng-readonly={{readonly}}>
+  </dl>
+</div>
+<button ng-click="save()" ng-hide={{readonly}}>Save</button>
+<a href="#/">Back</a>

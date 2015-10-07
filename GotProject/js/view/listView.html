@@ -1,0 +1,31 @@
+<a href="#/home">Home</a>	<a href="#/add">Add Prediction</a>
+<div>
+  <ul>    
+    <div class="datagrid">
+    	<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Family</th>
+					<th>Season</th>
+					<th>Episode</th>
+					<th>Actions</th>					
+				</tr>
+			</thead>			
+			<tbody>
+				<tr ng-repeat="prediction in predictions | orderBy: name">
+					<td>{{prediction.name}}</td>
+					<td>{{prediction.family | uppercase}}</td>
+					<td>{{prediction.season}}</td>
+					<td>{{prediction.episode}}</td>
+					<td>
+						<a href="#/detail/{{prediction.id}}">Edit</a>
+						<a href="#/delete/{{prediction.id}}">Delete</a>
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+    
+  </ul>
+</div>
