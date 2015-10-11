@@ -1,19 +1,28 @@
-<a href="#/home">Home</a>	<a href="#/add">Add Prediction</a>
+<head>
+<nav>
+	<ul>
+		<li><a href="#/home">Home</a></li>
+		<li><a href="#/">List</a></li>
+		<li><a href="#/add">Add Prediction</a></li>
+	</ul>
+</nav>
+</head>
 <div>
   <ul>
-  
+  	<form name="filterForm" ng-submit="filter()">
     <dt>
-    Name:
-    <input type="text" name="name" ng-model="nameFilter"> 
+    Name:    
+    <input type="text" name="name" ng-model="nameFilter" ng-maxlength="100">    
     Family:
-    <input type="text" name="family" ng-model="familyFilter"> 
+    <input type="text" name="family"ng-model="familyFilter" ng-maxlength="100"> 
     Season:
-    <input type="number" name="season" ng-model="seasonFilter"> 
+    <input type="number" name="season" ng-model="seasonFilter" min="1" max="10"> 
     Episode:
-    <input type="number" name="episode" ng-model="episodeFilter">
-    <button ng-click="filter()">Filter</button>
+    <input type="number" name="episode" ng-model="episodeFilter" min="1" max="10">
+    <button type="submit">Filter</button>
     <button ng-click="clearFilter()">Clear Filter</button>
   	</dt>
+  	</form>
     <div class="datagrid">
     	<table>
 			<thead>
@@ -27,12 +36,12 @@
 			</thead>			
 			<tbody>
 				<tr ng-repeat="prediction in filteredPredictions | orderBy: name">
-					<td>{{prediction.name}}</td>
+					<td><a href="#/detail/{{prediction.id}}">{{prediction.name}}</a></td>
 					<td>{{prediction.family | uppercase}}</td>
 					<td>{{prediction.season}}</td>
 					<td>{{prediction.episode}}</td>
 					<td>
-						<a href="#/detail/{{prediction.id}}">Edit</a>
+						<a href="#/edit/{{prediction.id}}">Edit</a>
 						<a href="#/delete/{{prediction.id}}">Delete</a>
 					</td>					
 				</tr>
