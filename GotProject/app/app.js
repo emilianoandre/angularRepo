@@ -4,10 +4,10 @@ var app = angular.module("gotApp", ["ngRoute"])
 //Adding the global variables, view constants and routing logic
 app.value("predictions", [{
 	id: 0,
-	name: 'Jon Snow',
+	name: 'Ned Stark',
 	family: 'Stark',
 	season: 1,
-	episode: 3
+	episode: 9
 }, {
 	id: 1,
 	name: 'Sansa Stark',
@@ -18,8 +18,8 @@ app.value("predictions", [{
 	id: 2,
 	name: 'Tyrion Lannister',
 	family: 'Lannister',
-	season: 4,
-	episode: 5
+	season: 7,
+	episode: 6
 }])
 .constant("VIEWS", {
 	listView: "app/view/listView.html",
